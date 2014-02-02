@@ -1,0 +1,8 @@
+<h3><%= project.get('name') %></h3>
+<div class="row" id="photoList">
+<% project.get('photos').each(function(photo){ %>
+	<div class="col-xs-4 photoLi">
+	<%= photo.id %> AND <%= photo.get('name') %>
+	</div>
+<% }); %>
+</div>

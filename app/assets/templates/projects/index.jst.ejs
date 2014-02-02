@@ -1,0 +1,12 @@
+<h3>Sisyphus Light Hauling Projects</h3>
+<div class="row" id="projectIndexUl">
+<% projects.each(function(proj) { %>
+	<div class="col-xs-4 projectLi">
+		<a href="#/project/<%= proj.id %>">
+			<%= proj.escape('name') %>
+		</a>
+	</div>
+
+<% }) %>
+</div>
+
