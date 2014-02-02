@@ -3,7 +3,9 @@ ClairePortfolio.Views.ProjectShow = Backbone.View.extend({
 	className: "windowDiv",
 
 	events: {
-		"click #newPhotoLink":"newPhoto"
+		"click .photoLi":"openPhoto",
+		"click #newPhotoLink":"newPhoto",
+		"click .cardLink": "cardOpen",
 		// "hidden.bs.modal": "render"
 	},
 
@@ -15,6 +17,15 @@ ClairePortfolio.Views.ProjectShow = Backbone.View.extend({
 		event.preventDefault();
 		var url = "project/" + this.model.id + "/photos/new"
 		Backbone.history.navigate(url, {trigger: true});
+	},
+
+	openPhoto: function(event) {
+		var photo_id = $(event.currentTarget).data("id");
+		var photos_coll = this.model.get("photos");
+		var photo = photos_coll.get(photo_id);
+		var photoShow = new ClairePortfolio.Views.PhotoModal({model: photo})
+		this.$el.find(".modal-content").html(photoShow.render().$el);
+		this.$('#photo-modal').modal('show');
 	},
 
 	render: function() {

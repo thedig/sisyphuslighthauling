@@ -10,7 +10,7 @@
 <div class="row" id="photoList">
 <% project.get('photos').each(function(photo){ %>
 
-	<div class="col-xs-4 photoLi">
+	<div class="col-xs-4 photoLi" data-id="<%= photo.id %>">
 		<div class="imageHolder">
 		<img src="<%= photo.get("img_url") %>" class="photoImage">
 		</div>
@@ -20,4 +20,14 @@
 	</div>
 
 <% }); %>
+</div>
+
+<div class="modal fade" id="photo-modal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+
+
+</div>
+</div>
 </div>

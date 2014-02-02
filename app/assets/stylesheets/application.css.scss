@@ -28,12 +28,19 @@
         margin-left: 15px;
       }
 
+      p {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
       .imageHolder {
         height: 225px;
       }
 
       .imageTitle {
         height: 75px; 
+        margin: 15px;
+        font-size: 18px;
       }
 
       .linkBox {
@@ -61,6 +68,19 @@
         height: 90%;
       }
 
+      .modal-content {
+        width: 700px; 
+      }
+
+      .modal-dialog {
+        width: 700px; 
+      }
+
+      .modalImage {
+        max-height: 600px;
+        max-width: 650px;
+      }
+
       .photoForm {
         margin: 5px;
         margin-left: 10px;
@@ -71,6 +91,7 @@
         width: 90%;
         margin: 15px;
         max-height: 200px;
+        max-width: 250px;
       }
 
       .photoLi{

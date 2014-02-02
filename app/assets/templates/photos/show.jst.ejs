@@ -1,0 +1,15 @@
+	<div class="clearfix editable">
+		<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true">&times;</button>
+			<div class="titleModalDiv">
+			<h2><%= photo.get("name") %></h2>
+			</div>
+			<div class="imageModalDiv">
+			<img class="modalImage" src="<%= photo.get("img_url") %>">
+			</div>
+			<div class="descModalDiv">
+				<p id="description"><%= photo.escape('description') %></p>
+			</div>
+		</div>
+	</div>
