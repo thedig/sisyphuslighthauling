@@ -1,0 +1,19 @@
+<div class="row">
+	<h4>Add Photo to <b><%= project.get("name") %></b></h4>
+</div>
+<br>
+<div class="row">
+<div class="col-xs-6 photoForm">
+	<form>
+	<label for="photo_title">Photo Title</label>
+	<input class="photoForm" id="photo_title" name="photo[name]">
+	<br>
+	<label for="photo_description">Description</label>
+	<textarea class="photoForm" id="photo_description" name="photo[description]"></textarea>
+	<br>
+	<label for="photo_imgurl">Image URL</label>
+	<input class="photoForm" id="photo_imgurl" name="photo[img_url]">
+	<br>
+	<input type="submit" class="addButton" value="Add Photo">
+	</form>
+</div></div>

@@ -1,14 +1,15 @@
 class PhotosController < ApplicationController
 
-	# def create
-	# 	params[:list][:board_id] = params[:board_id]
-	# 	@list = List.new(params[:list])
-	# 	if @list.save
-	# 		render :json => @list
-	# 	else
-	# 		flash.now[:errors] = @list.errors.full_messages
-	# 	end
-	# end
+	def create
+		params[:photo][:project_id] = params[:project_id]
+		@photo = Photo.new(params[:photo])
+		if @photo.save
+			flash[:notice] = "Saved!"
+			render :json => @photo
+		else
+			flash.now[:errors] = @photo.errors.full_messages
+		end
+	end
 
 	# def destroy
 	# 	@list = List.find(params[:id])
@@ -21,6 +22,9 @@ class PhotosController < ApplicationController
 	# 		format.html { render :index }
 	# 		format.json { render :json => List.all.to_json(:include => :cards) }
 	# 	end
+	# end
+
+	# def new
 	# end
 
 	# def show

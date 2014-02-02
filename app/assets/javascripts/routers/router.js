@@ -6,7 +6,22 @@ ClairePortfolio.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "projectIndex",
 		"projects": "projectIndex",
-		"project/:id": "projectShow"
+		"project/:id": "projectShow",
+		"project/:id/photos/new": "newPhoto"
+	},
+
+	newPhoto: function(id) {
+		var project = ClairePortfolio.projects.get(id);
+		if (!project) {
+			this.projectIndex();
+		} else {
+			var view = new ClairePortfolio.Views.PhotosNew({
+				model: project,
+				collection: project.get("photos")
+			});
+			// this.$rootEl.html(view.render().$el);
+			this._swapView(view);
+		}
 	},
 
 	projectIndex: function() {
