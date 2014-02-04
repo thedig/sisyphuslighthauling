@@ -5,7 +5,7 @@
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * You're free to add application- styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
@@ -31,6 +31,19 @@
       p {
         font-size: 20px;
         margin-top: 10px;
+      }
+
+      #navLi {
+        float: right;
+      }
+
+      #photoList {
+        margin: 0 auto;
+      }
+
+      #wrap {
+        max-width: 900px;
+        margin: 0 auto;
       }
 
       .imageHolder {
@@ -109,19 +122,34 @@
 
       .projectLi{
         display: inline-block;
-        margin: 15px;
+        margin: 10px;
         border-radius: 5px;
         padding: 5px;
         background-color: #e9e988;
-        width: 300px;
+        width: 190px;
         height: 150px;
-        font-size: x-large;
+        font-size: large;
         position: relative;
         text-align: left;
       }
 
       #projectIndexUl {
         padding: 0;
+        margin: 5px auto;
+      }
+
+      #headerImage {
+        margin-top: 15px;
+        max-width: 900px;
+      }
+
+      #headerplaceholder {
+        max-width: 900px;
+        height: 150px;
+      }
+
+      #link_list {
+        width: 150px;
       }
 
       #header {

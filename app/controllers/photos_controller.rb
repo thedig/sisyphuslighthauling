@@ -1,7 +1,14 @@
 class PhotosController < ApplicationController
 
 	def create
-		params[:photo][:project_id] = params[:project_id]
+		@proj_id = params[:project_id]
+		params[:photo][:project_id] = @proj_id
+		@last_photo = Project.find(@proj_id).photos.last
+		if @last_photo
+			params[:photo][:position] = @last_photo.position + 1
+		else
+			params[:photo][:position] = 1
+		end
 		@photo = Photo.new(params[:photo])
 		if @photo.save
 			flash[:notice] = "Saved!"
