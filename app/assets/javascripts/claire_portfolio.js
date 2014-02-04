@@ -1,8 +1,3 @@
-
-
-
-
-
 window.ClairePortfolio = {
   Models: {},
   Collections: {},

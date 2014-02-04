@@ -3,22 +3,23 @@
 	<h3><%= project.get('name') %></h3>
 </div>
 <div class="col-xs-1">
+	<br><br><br>
 	<a href="#" id="newPhotoLink">N</a>
 </div>
 </div>
 
 <div class="row" id="photoList">
 <% project.get('photos').each(function(photo){ %>
-
-	<div class="col-xs-4 photoLi" data-id="<%= photo.id %>">
-		<div class="imageHolder">
-		<img src="<%= photo.get("img_url") %>" class="photoImage">
-		</div>
-		<div class="imageTitle">
-		<%= photo.get('name') %>
+	<div class="col-xs-4">
+		<div class="photoLi" data-id="<%= photo.id %>">
+			<div class="imageHolder">
+			<img src="<%= photo.get("img_url") %>" class="photoImage">
+			</div>
+			<div class="imageTitle">
+			<%= photo.get('name') %>
+			</div>
 		</div>
 	</div>
-
 <% }); %>
 </div>
 
