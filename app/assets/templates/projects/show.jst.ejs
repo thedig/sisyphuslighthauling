@@ -4,7 +4,9 @@
 </div>
 <div class="col-xs-1">
 	<br><br><br>
-	<a href="#" id="newPhotoLink">N</a>
+	<% if (ClairePortfolio.login_status == true) { %>
+		<a href="#" id="newPhotoLink">New Photo</a>
+	<% } %>
 </div>
 </div>
 
@@ -17,6 +19,9 @@
 			</div>
 			<div class="imageTitle">
 			<%= photo.get('name') %>
+				<% if (ClairePortfolio.login_status == true) { %>
+				<a href="#" class="deletePhoto" data-id="<%= photo.id %>">delete</a>
+				<% } %>
 			</div>
 		</div>
 	</div>

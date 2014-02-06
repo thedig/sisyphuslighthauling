@@ -18,11 +18,11 @@ class PhotosController < ApplicationController
 		end
 	end
 
-	# def destroy
-	# 	@list = List.find(params[:id])
-	# 	@list.destroy
-	# 	render :json => @list
-	# end
+	def destroy
+		@photo = Photo.find(params[:id])
+		@photo.destroy
+		render :json => @photo
+	end
 
 	# def index
 	# 	respond_to do |format|

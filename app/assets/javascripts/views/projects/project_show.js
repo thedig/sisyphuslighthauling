@@ -3,14 +3,29 @@ ClairePortfolio.Views.ProjectShow = Backbone.View.extend({
 	className: "windowDiv",
 
 	events: {
+		"click .deletePhoto" : "deletePhoto",
 		"click .photoLi":"openPhoto",
 		"click #newPhotoLink":"newPhoto",
 		"click .cardLink": "cardOpen",
-		// "hidden.bs.modal": "render"
+	},
+
+	deletePhoto: function(event){
+		this.resetTimer();
+		event.preventDefault();
+		var that = this;
+		var photo_id = $(event.currentTarget).data("id");
+		var photos_coll = this.model.get("photos");
+		var photo = photos_coll.get(photo_id);
+		photo.destroy({
+			success: function() {
+				// that.render();
+			}
+		})
 	},
 
 	initialize: function(){
 		this.listenTo(this.model, "reset change sync", this.render);
+		this.listenTo(this.model.get("photos"), "reset change sync", this.render);
 	},
 
 	newPhoto: function(event) {
@@ -20,30 +35,31 @@ ClairePortfolio.Views.ProjectShow = Backbone.View.extend({
 	},
 
 	openPhoto: function(event) {
-		var photo_id = $(event.currentTarget).data("id");
-		var photos_coll = this.model.get("photos");
-		var photo = photos_coll.get(photo_id);
-		var photoShow = new ClairePortfolio.Views.PhotoModal({model: photo})
-		this.$el.find(".modal-content").html(photoShow.render().$el);
-		this.$('#photo-modal').modal('show');
+		var that = this;
+		this.timerId = setTimeout(function(){
+			var photo_id = $(event.currentTarget).data("id");
+			var photos_coll = that.model.get("photos");
+			var photo = photos_coll.get(photo_id);
+			var photoShow = new ClairePortfolio.Views.PhotoModal({model: photo})
+			that.$el.find(".modal-content").html(photoShow.render().$el);
+			that.$('#photo-modal').modal('show');
+		}, 400);
 	},
 
 	render: function() {
 		var renderedContent = this.template({
 						project: this.model
 					});
-
 		this.$el.html(renderedContent);
-
-		// this.$('#allPhotos').sortable({
-		// 	opacity: 0.8,
-		// 	cursor: "move",
-		// 	delay: 200,
-		// 	// connectWith: [".cardList"],
-		//  });
-
 		return this;
 	},
+
+	resetTimer: function(delay) {
+		var that = this;
+		setTimeout(function(){
+			clearTimeout(that.timerId);
+		}, 20);
+	}
 
 
 })

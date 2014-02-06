@@ -1,7 +1,12 @@
 class StaticController < ApplicationController
 
+	def about
+	end
+
 	def home
-		render :home
+	end
+
+	def contact
 	end
 
 end
