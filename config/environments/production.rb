@@ -20,6 +20,10 @@ ClairePortfolio::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.action_controller.asset_host = ENV['CDN_SUMO_URL']
+  config.static_cache_control = "public, max-age=2592000"
+config.assets.digest = true
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
