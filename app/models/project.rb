@@ -12,7 +12,8 @@
 class Project < ActiveRecord::Base
   attr_accessible :description, :name
 
-  has_many :photos
+  has_many :photos, :dependent => :destroy
+  # accepts_nested_attributes_for :photos, allow destroy => true
   has_one :splash_photo, 
   				:class_name => "Photo", 
   				:foreign_key => "project_splash_id"

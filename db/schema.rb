@@ -11,17 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140206174444) do
+ActiveRecord::Schema.define(:version => 20140212202247) do
 
   create_table "photos", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "img_url"
-    t.integer  "project_id",        :null => false
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "project_id",                :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "project_splash_id"
     t.float    "position"
+    t.string   "attached_img_file_name"
+    t.string   "attached_img_content_type"
+    t.integer  "attached_img_file_size"
+    t.datetime "attached_img_updated_at"
   end
 
   create_table "projects", :force => true do |t|

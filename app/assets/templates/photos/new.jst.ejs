@@ -4,7 +4,7 @@
 <br>
 <div class="row">
 <div class="col-xs-6 photoForm">
-	<form>
+	<form id="addPhotoForm" enctype="multipart/form-data">
 	<label for="photo_title">Photo Title</label>
 	<input maxlength="28" class="photoForm" id="photo_title" name="photo[name]">
 	<br>
@@ -14,6 +14,11 @@
 	<label for="photo_imgurl">Image URL</label>
 	<input class="photoForm" id="photo_imgurl" name="photo[img_url]">
 	<br>
+<!-- 	<label for="attached_img"> image:</label>
+  <input type="file" name="photo[attached_img]" id="attached_img">
+	<br> -->
+	<input type="hidden" name="authenticity_token" value="<%= $("meta[name='csrf-token']").attr("content") %>">
 	<input type="submit" class="addButton" value="Add Photo">
 	</form>
+	<!-- <iframe id='upload_frame' name='upload_frame' src=''></iframe> -->
 </div></div>

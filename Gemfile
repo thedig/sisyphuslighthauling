@@ -28,8 +28,8 @@ gem 'ejs'
 gem 'friendly_id'
 gem 'jquery-ui-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'jquery-fileupload-rails','0.3.0'
+gem "paperclip", "~> 3.0"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
