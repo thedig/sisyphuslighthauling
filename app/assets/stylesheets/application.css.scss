@@ -37,7 +37,7 @@
 
       h3 {
         margin-bottom: 45px;
-        margin-left: 10px;
+        // margin-left: 10px;
       }
 
       h4 {
@@ -80,6 +80,11 @@
         right:0;
         overflow:hidden;
         z-index:-1
+      }
+
+      .col-xs-3 {
+        padding-left: 7px;
+        padding-right: 7px;
       }
 
       .imageHolder {
@@ -161,22 +166,25 @@
         text-align: center;
       }
 
+      .row {
+        max-width: 100%;
+        margin: 0 auto
+      }
+
       .projectLi{
-        display: inline-block;
-        margin: 3px;
-        border-radius: 3px;
-        padding: 3px;
-        background-color: #e9e988;
-        height: 250px;
-        font-size: large;
-        position: relative;
-        text-align: left;
+
       }
 
       .splashContainer {
-        // display: table-cell;
-        // vertical-align: middle;
-        // max-height: 100%;
+        display: inline-block;
+        margin: 2px;
+        border-radius: 3px;
+        padding: 0;
+        background-color: #e9e988;
+        height: 400px;
+        font-size: large;
+        position: relative;
+        text-align: left;
         width: 100%;
         position: relative;
       }
@@ -187,13 +195,23 @@
         margin-right: auto;
         max-width: 100%;
         max-height: 130px;
-        top: 75px;
+      }
+
+      .splashPhotoDiv {
+        max-width: 100%;
+        height: 130px;
+      }
+
+      .splashDesc {
+        display: block;
+        padding: 10px;
+        height: 150px;
+        overflow: hidden;
       }
 
       .splashTitle {
         display: block;
         height: 80px;
-        padding-left: 5px;
         text-align: center;
       }
 
