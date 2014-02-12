@@ -14,19 +14,21 @@
 
 <div class="row" id="photoList">
 <% project.get('photos').each(function(photo){ %>
-	<div class="col-xs-4">
-		<div class="photoLi" data-id="<%= photo.id %>">
-			<div class="imageHolder">
-			<img src="<%= photo.get("img_url") %>" class="photoImage">
-			</div>
-			<div class="imageTitle">
-			<%= photo.get('name') %>
-				<% if (ClairePortfolio.login_status == true) { %>
-				<a href="#" class="deletePhoto" data-id="<%= photo.id %>">delete</a>
-				<% } %>
+	<% if (!photo.get('project_splash_id')) { %>
+		<div class="col-xs-4">
+			<div class="photoLi" data-id="<%= photo.id %>">
+				<div class="imageHolder">
+				<img src="<%= photo.get("img_url") %>" class="photoImage">
+				</div>
+				<div class="imageTitle">
+				<%= photo.get('name') %>
+					<% if (ClairePortfolio.login_status == true) { %>
+					<a href="#" class="deletePhoto" data-id="<%= photo.id %>">delete</a>
+					<% } %>
+				</div>
 			</div>
 		</div>
-	</div>
+	<% } %>
 <% }); %>
 </div>
 
