@@ -14,14 +14,19 @@
 
 @import "bootstrap";
 
+      a {
+        color: #044d69;
+      }
+
       body {
         margin: 0;
         margin-bottom: 25px;
         padding: 0;
         background-color: #fff;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+        font-family: "Josefin Sans", "Lucida Grande", "Bitstream Vera Sans", "Verdana";
         font-size: 13px;
-        color: #333;
+        // color: #333;
+        color: #044d69;
       }
 
       h4 {
@@ -114,8 +119,6 @@
       }
 
       .photoImage{
-        // width: 90%;
-        // margin: 0 auto;
         margin: 22px;
         max-height: 200px;
         max-width: 250px;
@@ -132,20 +135,43 @@
         height: 275px;
         font-size: x-large;
         position: relative;
-        text-align: left;
+        text-align: center;
       }
 
       .projectLi{
         display: inline-block;
-        margin: 10px;
-        border-radius: 5px;
-        padding: 5px;
+        margin: 3px;
+        border-radius: 3px;
+        padding: 3px;
         background-color: #e9e988;
-        width: 190px;
-        height: 150px;
+        height: 250px;
         font-size: large;
         position: relative;
         text-align: left;
+      }
+
+      .splashContainer {
+        // display: table-cell;
+        // vertical-align: middle;
+        // max-height: 100%;
+        width: 100%;
+        position: relative;
+      }
+
+      .splashPhoto {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        max-height: 130px;
+        top: 75px;
+      }
+
+      .splashTitle {
+        display: block;
+        height: 80px;
+        padding-left: 5px;
+        text-align: center;
       }
 
       #projectIndexUl {
@@ -155,7 +181,7 @@
 
       #headerImage {
         margin-top: 15px;
-        max-width: 900px;
+        max-width: 960px;
       }
 
       #headerplaceholder {

@@ -1,9 +1,14 @@
-<div class="row" id="projectIndexUl">
+<div class="row-fluid" id="projectIndexUl">
 <% projects.each(function(proj) { %>
-	<div class="col-xs-4 projectLi">
+	<div class="col-xs-3">
+		<div class="splashContainer projectLi">
 		<a href="#/project/<%= proj.id %>">
-			<%= proj.escape('name') %>
+			<p class="splashTitle"><%= proj.escape('name') %></p>
+		<% proj.get('splash').each(function(photo){ %>
+			<img class="splashPhoto" src="<%= photo.get('img_url') %>">
+		<% }) %>
 		</a>
+		</div>
 	</div>
 
 <% }) %>

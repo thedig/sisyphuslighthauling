@@ -17,7 +17,8 @@ ClairePortfolio.Views.ProjectsIndex = Backbone.View.extend({
 
 	render: function() {
 		var renderedContent = this.template({
-			projects: this.collection
+			projects: this.collection,
+			
 		});
 
 		this.$el.html(renderedContent);

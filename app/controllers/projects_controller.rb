@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
 
 	def index
 		@projects = Project.all
-		render :json => @projects.to_json(:include => :photos )
+		render :json => @projects.to_json(:include => [:photos, :splash_photo] )
 	end
 
 end
